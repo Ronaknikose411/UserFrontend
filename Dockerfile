@@ -1,4 +1,3 @@
-//Docker file
 FROM node:23-alpine AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -9,7 +8,6 @@ RUN npm run build
 
 
 # ──────────────── Stage 2: serve ────────────────
-
 
 FROM nginx:stable-alpine
 # remove default static content
